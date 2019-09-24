@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        table, th, td {
+            border: 1px solid blue;
+            text-align: center;
+            vertical-align: central;
+            height:100px;
+            width: 200px;
+            
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td onmouseover="doSomehting(this)">
+                0
+            </td>
+            <td onmouseover="doSomehting(this)">
+                0
+            </td>
+            <td onmouseover="doSomehting(this)">
+                0
+            </td>
+
+        </tr>
+        <tr>
+            <td onmouseover="doSomehting(this)">
+                0
+            </td>
+            <td onmouseover="doSomehting(this)">
+                0
+            </td>
+            <td onmouseover="doSomehting(this)">
+                0
+            </td>
+        </tr>
+        <tr>
+            <td onmouseover="doSomehting(this)">
+                0
+            </td>
+            <td onmouseover="doSomehting(this)">
+                0
+            </td>
+            <td onmouseover="doSomehting(this)">
+                0
+            </td>
+        </tr>
+    </table>
+    <script>
+        function doSomehting(linjeEndring) {
+            console.log("hei jeg kjorer" + linjeEndring.innerHTML);
+            linjeEndring.innerHTML = 'x';
+        }
+        
+    </script>
+</body>
+</html>

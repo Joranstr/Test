@@ -1,0 +1,35 @@
+﻿body {
+    padding: 0px;
+    margin: 0px;
+}
+
+div.page {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr 10fr 1fr;
+    grid-template-columns: 1fr 5fr;
+    grid-template-areas: 'header header''menu mainContent''footing footing';
+}
+
+div.header {
+    background-color: blue;
+    grid-area: header;
+    grid-template-column: 1 1;
+    grid-template-row: 1 2
+}
+
+div.menu {
+    background-color: yellow;
+    grid-area: menu;
+}
+
+div.mainContent {
+    background-color: red;
+    grid-area: mainContent;
+}
+
+div.footing {
+    color: white;
+    background-color: black;
+    grid-area: footing;
+}
