@@ -109,55 +109,69 @@
 <body>
     <div class="page">
         <div class="Screen" id="screen">
-            test
+            
         </div>
-        <div class="btn1" onclick="1(this)" >
+        <div class="btn1" onclick="btn(this)" >
             1
         </div>
-        <div class="btn2" onclick="1(this)">
+        <div class="btn2" onclick="btn(this)">
             2
         </div>
-        <div class="btn3"onclick="1(this)">
+        <div class="btn3"onclick="btn(this)">
             3
         </div>
-        <div class="btn4" onclick="1(this)">
+        <div class="btn4" onclick="btn(this)">
             4
         </div>
-        <div class="btn5" onclick="1(this)">
+        <div class="btn5" onclick="btn(this)">
             5
         </div>
-        <div class="btn6" onclick="1(this)">
+        <div class="btn6" onclick="btn(this)">
             6
         </div>
-        <div class="btn7" onclick="1(this)">
+        <div class="btn7" onclick="btn(this)">
             7
         </div>
-        <div class="btn8" onclick="1(this)">
+        <div class="btn8" onclick="btn(this)">
             8
         </div>
-        <div class="btn9"onclick="1(this)">
+        <div class="btn9"onclick="btn(this)">
             9
         </div>
-        <div class="btn0" onclick="1(this)">
+        <div class="btn0" onclick="btn(this)">
             0
         </div>
-        <div class="btn11" onclick="clear">
+        <div class="btn11" onclick="clearx()">
             Clear
         </div>
-        <div class="btn12" onclick="enter">
+        <div class="btn12" onclick="enter(this)">
             Enter
         </div>
         
     </div>
     <script>
-        var screen = document.getElementById(screen);
-        function one() {
-            tall += button.getElementById;
-            screen.innerHTML=tall
+        /*var output = document.getElementById(screen);*/
+        var tall = '';
+
+        var screen = document.getElementById("screen");
+
+        function btn(button) {
+            tall += button.innerHTML;
+            screen.innerHTML = tall;
         }
-       /* if (screen = 1234) {
-            document.getElementById(screen) = screen.innerHTML= 'riktig'
-        }*/
+
+        function clearx() {
+            console.log('cleared')
+            screen.innerHTML = '';
+        }
+        function enter() {
+            if (document.getElementById('screen').innerHTML === '1234') {
+                alert('open')
+            }
+            else {
+                alert('wrong')
+            }
+        }
         console.log('btn1')
     </script>
 </body>
