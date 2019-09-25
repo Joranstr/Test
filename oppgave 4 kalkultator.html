@@ -13,6 +13,8 @@
         div.page {
             height: 100vh;
             display: grid;
+            text-align:center;
+            justify-content:center;
             grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
             grid-template-columns: 1fr 1fr 1fr;
             grid-template-areas: 'screen screen screen' 'btn1 btn2 btn3''btn4 btn5 btn6' 'btn7 btn8 btn9' 'btn11 btn0 btn12';
@@ -22,7 +24,7 @@
             border: solid black;
             grid-area: screen;
             text-align: right;
-            
+            justify-content:center;
         }
 
         div.btn1 {
@@ -106,49 +108,57 @@
 </head>
 <body>
     <div class="page">
-        <div class="Screen">
+        <div class="Screen" id="screen">
             test
         </div>
-        <div class="btn1" >
+        <div class="btn1" onclick="1(this)" >
             1
         </div>
-        <div class="btn2">
+        <div class="btn2" onclick="1(this)">
             2
         </div>
-        <div class="btn3">
+        <div class="btn3"onclick="1(this)">
             3
         </div>
-        <div class="btn4">
+        <div class="btn4" onclick="1(this)">
             4
         </div>
-        <div class="btn5">
+        <div class="btn5" onclick="1(this)">
             5
         </div>
-        <div class="btn6">
+        <div class="btn6" onclick="1(this)">
             6
         </div>
-        <div class="btn7">
+        <div class="btn7" onclick="1(this)">
             7
         </div>
-        <div class="btn8">
+        <div class="btn8" onclick="1(this)">
             8
         </div>
-        <div class="btn9">
+        <div class="btn9"onclick="1(this)">
             9
         </div>
-        <div class="btn0">
+        <div class="btn0" onclick="1(this)">
             0
         </div>
-        <div class="btn11">
-            11
+        <div class="btn11" onclick="clear">
+            Clear
         </div>
-        <div class="btn12">
-            12
+        <div class="btn12" onclick="enter">
+            Enter
         </div>
         
     </div>
     <script>
-
+        var screen = document.getElementById(screen);
+        function one() {
+            tall += button.getElementById;
+            screen.innerHTML=tall
+        }
+       /* if (screen = 1234) {
+            document.getElementById(screen) = screen.innerHTML= 'riktig'
+        }*/
+        console.log('btn1')
     </script>
 </body>
 </html>
