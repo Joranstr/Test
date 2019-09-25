@@ -5,17 +5,17 @@
     <meta charset="utf-8" />
     <title></title>
 </head>
-<body onload="testOnLoad()" id="body">
+<body onload="testOnLoad" id="body">
     <div id="test">
         start
 
     </div>
     <script>
-        alert(test);
+        alert('test tekst');
 
-        function testOnLoad{
-            document.getElementById('test').innerHTML = 'test' + new Date().toTimeString()
-
+        function testOnLoad() {
+            document.getElementById('test').innerHTML = 'test' + new Date().toTimeString();
+            console.log('testOnLoad');
         }
     </script>
 </body>
