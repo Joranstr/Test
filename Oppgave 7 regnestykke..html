@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        *{
+            background-color:royalblue;
+        }
+    </style>
+</head>
+<body>
+    <input id="numberA" type="range" min="1" max="1000" step="1" oninput="calculate() value="2" />
+    <input id="NumberB" type="range" min="1" max="1000" step="1" oninput="calculate() value="2" />
+    <select id="mathSoultions">
+        <option selected id="area">Area</option>
+        <option id="surface">Surface</option>
+    </select>
+    <div id="result" ></div>
+    <script>
+        var resultDiv = document.getElementById('result');
+        var NumberAInput = document.getElementById('NumberA');
+        var NumberAInput = document.getElementById('NumberB');
+
+        calculate();
+        if id = "area" = true {
+            id = "result".innerHTML = var prodArea;
+
+        }
+        if id = "surface" = true {
+            id = "result".innerHTML = var prodSurf;
+        }
+
+        function calculate() {
+            var numberA = parseInt(numberAInput.value);
+            var numberB = parseInt(numberBInput.value);
+            var prodArea = NumberA * numberB;
+            var prodSurf = (2 * numberA) * (2 * numberB);
+            
+                
+        }
+    </script>
+</body>
+</html>
