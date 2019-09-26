@@ -4,6 +4,11 @@
 <head>
     <meta charset="utf-8" />
     <title></title>
+    <style>
+        *{
+            background-color: royalblue;
+        }
+    </style>
 </head>
 <body>
     <p>Ferdighet 6 - Sette sammen tekst av flere deler  og  bruke dette til å bygge HTML dynamisk</p>
@@ -16,7 +21,7 @@
         <option selected value="green">Green color</option>
         <option value="blue">Blue color</option>
     </select>
-    //border farge
+    
     <select id="borderColor" onchange="showDiv()">
         <option value="black">black boder</option>
         <option value="gray"> gray boder</option>
@@ -47,7 +52,7 @@
                 + 'background-color: ' + colorChooser.value + ';'
                 + 'width: ' + sizeSlider.value + 'px;'
                 + 'height: ' + sizeSlider.value + 'px;'
-                + 'border:2px '+ bo  ' + borderColor.value + ';'
+                + 'border: 2px solid ' + borderColor.value + '; '
                 + 'border-radius: ' + borderSlider.value + 'px;'
                 + '">'
             console.log(borderColor.value);
