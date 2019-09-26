@@ -11,35 +11,42 @@
     </style>
 </head>
 <body>
-    <input id="numberA" type="range" min="1" max="1000" step="1" oninput="calculate() value="2" />
-    <input id="NumberB" type="range" min="1" max="1000" step="1" oninput="calculate() value="2" />
+    <input id="numberA" type="range" min="1" max="1000" step="1" oninput="test()" value="2" />
+    <input id="numberB" type="range" min="1" max="1000" step="1" oninput="test()" value="2" />
     <select id="mathSoultions">
         <option selected id="area">Area</option>
         <option id="surface">Surface</option>
     </select>
-    <div id="result" ></div>
+    <div id="result">
+
+    </div>
     <script>
         var resultDiv = document.getElementById('result');
-        var NumberAInput = document.getElementById('NumberA');
-        var NumberAInput = document.getElementById('NumberB');
+        var NumberAInput = document.getElementById('numberA');
+        var NumberBInput = document.getElementById('numberB');
+        var numberA = parseInt(NumberAInput.value);
+        var numberB = parseInt(NumberBInput.value);
+        var prodArea = numberA * numberB;
+        var prodSurf = (2 * numberA) * (2 * numberB);
+        var area = document.getElementById("area");
+        var surface = document.getElementById("surface");
+        console.log(area + surface)
+        
+        //calculate();
+        test();
 
-        calculate();
-        if id = "area" = true {
-            id = "result".innerHTML = var prodArea;
-
+        function test() {
+            if (area = true) {
+                resultDiv.innerHTML = prodArea;
+                resultDiv.innerHTML = numberA + '*' + numberB + '='prodArea;
+            }
+            if (surface = true) {
+                result.innerHTML = prodSurf;
+                resultDiv.innerHTML = '(2 *'+ numberA')'+ '*'+ '(2 *'+ numberB+')' ;
+            }
+            console.log('kjører');
         }
-        if id = "surface" = true {
-            id = "result".innerHTML = var prodSurf;
-        }
-
-        function calculate() {
-            var numberA = parseInt(numberAInput.value);
-            var numberB = parseInt(numberBInput.value);
-            var prodArea = NumberA * numberB;
-            var prodSurf = (2 * numberA) * (2 * numberB);
-            
-                
-        }
+       
     </script>
 </body>
 </html>
