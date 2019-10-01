@@ -8,12 +8,83 @@
         body{
             padding:0;
             margin:0;
-        }
+            display: grid;
+            text-align:center;
+            justify-content: center;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr;
+            
 
+        }
+        /*/div.div1{
+            background-color: blue;
+            border: solid black;
+            
+        }*/
+        div.div2{
+            background-color:red;
+            border: solid black;
+        }
+        div.div3{
+            background-color: yellow;
+            border: solid black;
+
+        }
+        div.div4{
+            background-color: aqua;
+            border: solid black;
+        }
+        div.div5{
+            background-color:darkred;
+            border: solid black;
+        }
+        .styling {
+            background-color:black;
+            border:solid red ;
+        }
+        .styling2{
+            background-color: blue;
+            border:dotted yellow;
+        }
+        .styling3 {
+            background-color:aqua;
+            border:dashed black;
+        }
     </style>
 </head>
 <body class="body">
-    <div></div>
-    <div></div>
+    <div id="div1" class="box1">
+        <input id="chk1" type="checkbox" onchange="toggleStyleA()"/>
+    </div>
+    <div id="div2" class="box2">
+        <input id="chk2" type="checkbox" onchange="toggleStyleB()" />
+    </div>
+    <div id="div3" class="box3">
+        <input id="chk3" type="checkbox" onchange="toggleStyleC()" />
+    </div>
+    <div id="div4" class="box4">
+        <input id="chk4" type="checkbox" onchange="toggleStyleD()" />
+    </div>
+    <div id="div5" class="box5">
+        <input id="chk5" type="checkbox" onchange="toggleStyleE()" />
+    </div>
+
+    <script>
+        
+
+        function toggleStyleA() {
+            var ischecked = document.getElementById('chk1').cheched;
+            document.getElementById('div1').classList.toggle('styling', ischecked);
+            
+        }
+        function toggleStyleB() {
+            var isChecked = document.getElementById('chk2').cheched;
+            document.getElementById('div2').classList.toggle('styling2', isChecked)
+        }
+        function toggleStyleC() {
+            var isChecked = document.getElementById('chk3').cheched;
+            document.getElementById('div3').classList.toggle('styling3', isChecked)
+        }
+    </script>
 </body>
 </html>
