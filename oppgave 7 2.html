@@ -16,25 +16,20 @@
         var tallBInput = document.getElementById('tallB');
         calculate();
         function calculate() {
-
             var tallA = parseInt(tallAInput.value);
             var tallB = parseInt(tallBInput.value);
             var sum = tallA + tallB;
             var differense = tallA - tallB;
             var produkt = tallA * tallB;
             var kvotient = tallA / tallB;
-            var prodAreal = tallA * tallB;
-            var prodOver = 2 * tallA + 2 * tallB;
+            var overflate = 2 * tallA + 2 * tallB;
             resultatDiv.innerHTML = '' +
                 tallA + '+' + tallB + '=' + sum + '<br/>' +
                 tallA + '-' + tallB + '=' + differense + '<br/>' +
                 tallA + '*' + tallB + '=' + produkt + '<br/>' +
                 tallA + '/' + tallB + '=' + kvotient + '<br/>' +
-                tallA + '*' + tallB + '=' + prodAreal + '<br/>' +
-                '2 * 'tallA + '+' + '2 * 'tallB ' = ' + prodOver;
-
-
+                '2*' + tallA + '+' + '2*' +tallB + '=' + overflate;
         }
-    </script>
+    </script></script>
 </body>
 </html>
