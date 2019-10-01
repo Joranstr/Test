@@ -12,7 +12,7 @@
             text-align:center;
             justify-content: center;
             grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-            grid-template-rows: 1fr;
+            grid-template-rows: 1fr 10fr;
             
 
         }
@@ -53,29 +53,75 @@
     </style>
 </head>
 <body class="body">
-    <div id="div1" class="box1">
-        <input id="chk1" type="checkbox" onchange="toggleStyleA()"/>
+
+    <div id="div1" class="box1" onclick="selectedDiv(this)">
+        box 1
     </div>
-    <div id="div2" class="box2">
-        <input id="chk2" type="checkbox" onchange="toggleStyleB()" />
+    <div id="div2" class="box2" onclick="selectedDiv(this)">
+        box 2
     </div>
-    <div id="div3" class="box3">
-        <input id="chk3" type="checkbox" onchange="toggleStyleC()" />
+    <div id="div3" class="box3" onclick="selectedDiv(this)">
+        box 3
     </div>
-    <div id="div4" class="box4">
-        <input id="chk4" type="checkbox" onchange="toggleStyleD()" />
+    <div id="div4" class="box4" onclick="selectedDiv(this)">
+        box 4
     </div>
-    <div id="div5" class="box5">
-        <input id="chk5" type="checkbox" onchange="toggleStyleE()" />
+    <div id="div5" class="box5" onclick="selectedDiv(this)">
+        box 5
+    </div>
+    <div id="chkBox">
+        <input id="chk1" type="checkbox" onchange="selectedchk(this)"/>
+        <input id="chk2" type="checkbox" onchange="selectedchk(this)"/>
+        <input id="chk3" type="checkbox" onchange="selectedchk(this)"/>
     </div>
 
     <script>
-        
+        class BoxClass {
+            constructor(d) {
+                this.div = d;
+                this.checkbox1 = "false";
+                this.checkbox2 = "false";
+                this.checkbox3 = "false";
+            }
+        }
+        var myDivs = new Map()
 
-        function toggleStyleA() {
-            var ischecked = document.getElementById('chk1').cheched;
-            document.getElementById('div1').classList.toggle('styling', ischecked);
-            
+        var currentDiv;
+        myDivs.set("div1", new BoxClass(document.getElementById("div1")));
+        myDivs.set("div2", new BoxClass(document.getElementById("div2")));
+        myDivs.set("div3", new BoxClass(document.getElementById("div3")));
+        myDivs.set("div4", new BoxClass(document.getElementById("div4")));
+        myDivs.set("div5", new BoxClass(document.getElementById("div5")));
+
+        console.log(myDivs.size)
+        //console.log(myDivs.get("div1"))
+        //for (let [key, element] of myDivs.entries()) {
+        //    console.log("item: ", key, element)
+
+        //}
+
+        function selectedchk(box) {
+            let d = myDivs.get(currentDiv.id)
+            console.log("selectedchk: ", d)
+            if (box.id == "chk1") {
+                console.log("selectedchk: ", box)
+                d.checkbox1 = box.value
+            } else if (box.id == "chk2") {
+                d.checkbox2 = box.value
+            } else if (box.id == "chk3") {
+                d.checkbox13 = box.value
+            }
+             console.log("selectedchk: ", d)
+        }
+        function selectedDiv(test) {
+            let d = myDivs.get(test.id)
+            console.log(d)
+
+            document.getElementById('chk1').value = d.checkbox1
+            document.getElementById('chk2').value = d.checkbox2
+            document.getElementById('chk3').value = d.checkbox3
+            //document.getElementById(test.id).classList.toggle(style)
+            currentDiv = test;
         }
         function toggleStyleB() {
             var isChecked = document.getElementById('chk2').cheched;
