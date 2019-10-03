@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        .body {
+            background-color: darkblue;
+        }
+
+        .box1 {
+            background-color: red;
+        }
+
+        .box2 {
+            background-color: green;
+        }
+
+        .result {
+            background-color: black;
+            color: white;
+        }
+
+        .selected {
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body class="body">
+    <div id="div1" class="box1" onclick="chooseBox(this)">
+        DivA
+    </div>
+    <div id="div2" class="box2" onclick="chooseBox(this)">
+        DivB
+    </div>
+    <p id="sel"></p>
+    <div>
+        <input id="height" type="range" min="1" max="100" step="1" oninput="calculate(this)" />
+        <input id="width" type="range" min="1" max="100" step="1" oninput="calculate(this)" />
+    </div>
+    <div id="result" class="result">
+        result = <br />
+    </div>
+
+    <script>
+        let resultDiv = document.getElementById('result');
+        let numbAInput = document.getElementById('height');
+        let numbBInput = document.getElementById('width');
+        let divOne = document.getElementById('div1');
+        let divTwo = document.getElementById('div2');
+        let selectedDiv;
+        let swapingDiv;
+        var divOneArea = 0;
+        var divTwoArea = 0;
+
+        selectedDiv = divOne;
+
+        function chooseBox(divLetterBox) {
+            document.getElementById('sel').innerHTML = 'valgt Div er ' + divLetterBox;
+            selectedDiv = divLetterBox;
+            console.log('hei' + selectedDiv);
+            selectedDiv.classList.add('selected');
+            selectedDiv.classList.remove('selected');
+            selectedDiv.style.width = numbAInput.value;
+            selectedDiv.style.height = numbBInput.value;
+        }
+
+        //calculate();
+
+        function calculate(inp) {
+            if (selectedDiv == divOne) {
+                divOneArea = numbAInput.value * numbBInput.value;
+            } else {
+                divTwoArea = numbAInput.value * numbBInput.value;
+            }
+            selectedDiv.style.width = numbAInput.value + 'vw';
+            selectedDiv.style.height = numbBInput.value + 'vh';
+            resultDiv.innerHTML = 'Result = ' + divOneArea + ' - ' + divTwoArea;
+        }
+    </script>
+</body>
+</html>
