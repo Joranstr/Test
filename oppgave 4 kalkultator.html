@@ -13,18 +13,19 @@
         div.page {
             height: 100vh;
             display: grid;
-            text-align:center;
-            justify-content:center;
+            text-align: center;
+            justify-content: center;
             grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
             grid-template-columns: 1fr 1fr 1fr;
             grid-template-areas: 'screen screen screen' 'btn1 btn2 btn3''btn4 btn5 btn6' 'btn7 btn8 btn9' 'btn11 btn0 btn12';
         }
+
         div.Screen {
-            background-color: navy;
+            background-color: white;
             border: solid black;
             grid-area: screen;
             text-align: right;
-            justify-content:center;
+            justify-content: center;
         }
 
         div.btn1 {
@@ -46,60 +47,63 @@
         }
 
         div.btn4 {
-            color: white;
+            color: black;
             background-color: blue;
             grid-area: btn4;
             border: solid black;
         }
+
         div.btn5 {
-            color: white;
+            color: black;
             background-color: yellow;
             grid-area: btn5;
             border: solid black;
         }
+
         div.btn6 {
-            color: white;
+            color: black;
             background-color: red;
             grid-area: btn6;
             border: solid black;
         }
+
         div.btn7 {
-            color: white;
+            color: black;
             background-color: blue;
             grid-area: btn7;
             border: solid black;
         }
 
         div.btn8 {
-            color: white;
+            color: black;
             background-color: yellow;
             grid-area: btn8;
             border: solid black;
         }
 
         div.btn9 {
-            color: white;
+            color: black;
             background-color: red;
             grid-area: btn9;
             border: solid black;
         }
 
         div.btn0 {
-            color: white;
+            color: black;
             background-color: yellow;
             grid-area: btn0;
             border: solid black;
         }
 
         div.btn11 {
-            color: white;
+            color: black;
             background-color: blue;
             grid-area: btn11;
             border: solid black;
         }
 
         div.btn12 {
-            color: white;
+            color: black;
             background-color: red;
             grid-area: btn12;
             border: solid black;
@@ -109,64 +113,52 @@
 <body>
     <div class="page">
         <div class="Screen" id="screen">
-            
+
         </div>
-        <div class="btn1" onclick="btn(this)" >
-            1
-        </div>
-        <div class="btn2" onclick="btn(this)">
-            2
-        </div>
-        <div class="btn3"onclick="btn(this)">
-            3
-        </div>
-        <div class="btn4" onclick="btn(this)">
-            4
-        </div>
-        <div class="btn5" onclick="btn(this)">
-            5
-        </div>
-        <div class="btn6" onclick="btn(this)">
-            6
-        </div>
-        <div class="btn7" onclick="btn(this)">
-            7
-        </div>
-        <div class="btn8" onclick="btn(this)">
-            8
-        </div>
-        <div class="btn9"onclick="btn(this)">
-            9
-        </div>
-        <div class="btn0" onclick="btn(this)">
-            0
-        </div>
+        <div class="btn1" onclick="btn(this)">1</div>
+        <div class="btn2" onclick="btn(this)">2</div>
+        <div class="btn3" onclick="btn(this)">3</div>
+        <div class="btn4" onclick="btn(this)">4</div>
+        <div class="btn5" onclick="btn(this)">5</div>
+        <div class="btn6" onclick="btn(this)">6</div>
+        <div class="btn7" onclick="btn(this)">7</div>
+        <div class="btn8" onclick="btn(this)">8</div>
+        <div class="btn9" onclick="btn(this)">9</div>
+        <div class="btn0" onclick="btn(this)">0</div>
         <div class="btn11" onclick="clearx()">
             Clear
         </div>
         <div class="btn12" onclick="enter(this)">
             Enter
         </div>
-        
+
     </div>
     <script>
         /*var output = document.getElementById(screen);*/
-        var tall = '';
+
+        var code = '1234';
+        var kodelås = '';
 
         var screen = document.getElementById("screen");
 
         function btn(button) {
-            tall += button.innerHTML;
-            screen.innerHTML = tall;
+            kodelås += button.innerText;
+            screen.innerHTML = kodelås;
+
+
+            console.log(kodelås, screen)
         }
 
         function clearx() {
             console.log('cleared')
+            kodelås = '';
             screen.innerHTML = '';
         }
         function enter() {
-            if (document.getElementById('screen').innerHTML === '1234') {
+            console.log(kodelås)
+            if (kodelås == code) {
                 alert('open')
+                console.log(screen)
             }
             else {
                 alert('wrong')
