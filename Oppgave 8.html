@@ -79,14 +79,14 @@
         class BoxClass {
             constructor(d) {
                 this.div = d;
-                this.checkbox1 = "false";
-                this.checkbox2 = "false";
-                this.checkbox3 = "false";
+                this.checkbox1 = false;
+                this.checkbox2 = false;
+                this.checkbox3 = false;
             }
         }
         var myDivs = new Map()
 
-        var currentDiv;
+        var currentDiv = document.getElementById('div1');
         myDivs.set("div1", new BoxClass(document.getElementById("div1")));
         myDivs.set("div2", new BoxClass(document.getElementById("div2")));
         myDivs.set("div3", new BoxClass(document.getElementById("div3")));
@@ -105,11 +105,11 @@
             console.log("selectedchk: ", d)
             if (box.id == "chk1") {
                 console.log("selectedchk: ", box)
-                d.checkbox1 = box.value
+                d.checkbox1 = box.checked
             } else if (box.id == "chk2") {
-                d.checkbox2 = box.value
+                d.checkbox2 = box.checked
             } else if (box.id == "chk3") {
-                d.checkbox13 = box.value
+                d.checkbox3 = box.checked
             }
              console.log("selectedchk: ", d)
         }
@@ -117,9 +117,9 @@
             let d = myDivs.get(test.id)
             console.log(d)
 
-            document.getElementById('chk1').value = d.checkbox1
-            document.getElementById('chk2').value = d.checkbox2
-            document.getElementById('chk3').value = d.checkbox3
+            document.getElementById('chk1').checked = d.checkbox1
+            document.getElementById('chk2').checked = d.checkbox2
+            document.getElementById('chk3').checked = d.checkbox3
             //document.getElementById(test.id).classList.toggle(style)
             currentDiv = test;
         }
