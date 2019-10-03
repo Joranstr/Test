@@ -41,6 +41,7 @@
     </div>
     <div id="result" class="result">
         result = <br />
+        
     </div>
 
     <script>
@@ -64,6 +65,10 @@
             selectedDiv.classList.remove('selected');
             selectedDiv.style.width = numbAInput.value;
             selectedDiv.style.height = numbBInput.value;
+
+            numbAInput.value = parseInt(selectedDiv.style.height);
+            numbBInput.value = parseInt(selectedDiv.style.width);
+
         }
 
         //calculate();
@@ -77,7 +82,17 @@
             selectedDiv.style.width = numbAInput.value + 'px';
             selectedDiv.style.height = numbBInput.value + 'px';
             resultDiv.innerHTML = 'Result = ' + divOneArea + ' - ' + divTwoArea;
+            if (divOneArea == divTwoArea) {
+                resultDiv.innerHTML += ' A er lik B'
+            }
+            if (divOneArea > divTwoArea) {
+                resultDiv.innerHTML+= ' Div A er større enn B'
+            }
+            if (divOneArea < divTwoArea) {
+                resultDiv.innerHTML += ' Div B er større enn A'
+            }
         }
+        
     </script>
 </body>
 </html>
