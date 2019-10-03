@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        .body{
+            margin:0;
+            padding:0;
+
+        }
+        .border {
+            border: dotted blue;
+        }
+        .color {
+            background-color: red;
+        }
+        .rounded {
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1"class="boxA" onclick="choosebox('div1')">Div A</div>
+    <div id="div2"class="boxB" onclick="choosebox('div2')">Div B</div>
+    <p id="valgt"></p>
+    <input id="chk1" type="checkbox" onclick="toggleStyle()"/>
+    <input id="chk2" type="checkbox" onclick="toggleStyle()"/>
+    <input id="chk3" type="checkbox" onclick="toggleStyle()"/>
+
+    <script>
+        var divOne = document.getElementById('div1')
+        var divTwo = document.getElementById('div2')
+        var valgtDiv;
+        var swapingDiv;
+        function choosebox(divBokstav) {
+            document.getElementById('valgt').innerHTML = 'valgt Div Er ' + divBokstav;
+            valgtDiv = document.getElementById(divBokstav);
+
+            valgtDiv.classList.add('selected');
+            valgtDiv.classList.remove('selected')
+            chk1.checked = valgtDiv.classList.contains('color');
+            chk2.checked = valgtDiv.classList.contains('border');
+            chk3.checked = valgtDiv.classList.contains('rounded');
+        }
+
+        function toggleStyle() {
+            var isChecked = document.getElementById('chk1').checked;
+            valgtDiv.classList.toggle('color', isChecked);
+            var isChecked = document.getElementById('chk2').checked;
+            valgtDiv.classList.toggle('border', isChecked);
+            var isChecked = document.getElementById('chk3').checked;
+            valgtDiv.classList.toggle('rounded', isChecked);
+        }
+
+
+    </script>
+
+</body>
+</html>
