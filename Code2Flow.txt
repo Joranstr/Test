@@ -1,0 +1,20 @@
+si hva kunden må betale;
+if(kontant){
+  ta i mot betaling;
+  if (bataling== kostnad){
+    si takk;
+  }else {
+  gi penger tilbake;
+  si takk;
+  }
+}else if(kort){
+  skriv inn beløp på terminal;
+  be kunden gjennomføre betaling på trminal;
+  si takk;
+  }else {
+    if(vipps) {
+    gi kunde vipps-nr;
+    be kunde betale i vipps;
+    se kvitering;{
+  }
+si takk;
