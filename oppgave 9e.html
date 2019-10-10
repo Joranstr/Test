@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        #colorDiv {
+            width: 200px;
+            height: 200px;
+            border: 1px solid aqua;
+        }
+    </style>
+</head>
+<body>
+    <select id="colorSelect" onchange="chooseColor()">
+        <option value="black">Svart</option>
+        <option value="darkblue">Mørkblå</option>
+        <option value="lightblue">Lysblå</option>
+        <option value="lightgreen">Lysgrønn</option>
+        <option value="red">Lysrød</option>
+    </select>
+    <div id="colorDiv">test</div>
+    <script>
+        let colorA = document.getElementById('colorSelect');
+        let colorDiv = document.getElementById('colorDiv');
+        chooseColor();
+        function chooseColor() {
+            colorDiv.style.backgroundColor = colorA.value;
+            if (colorDiv.style.backgroundColor == 'black' || colorDiv.style.backgroundColor =='darkblue') {
+                colorDiv.style.color = 'white'
+            } else {
+                colorDiv.style.color = 'black';
+            }
+            
+        }
+
+
+    </script>
+</body>
+</html>
