@@ -34,14 +34,11 @@
             else if (buttonClicked == divC) infoDiv.innerHTML += 'C';
             if (buttonLastClicked == buttonClicked) {
                 infoDiv.innerHTML += ' (samme som forrige gang)';
-            }
-            if (buttonClicked == 'a' && buttonBeforeLast == 'a' && buttClicked3 == 'a') {
+            } else if (buttonClicked == 'a' && buttonBeforeLast == 'a' && buttClicked3 == 'a') {
                 infoDiv.innerHTML += 'You clicked it 3 times in a raw';
-            }
-            if (buttonClicked == 'b' && buttonBeforeLast == 'b' && buttClicked3 == 'b') {
+            } else if (buttonClicked == 'b' && buttonBeforeLast == 'b' && buttClicked3 == 'b') {
                 infoDiv.innerHTML += 'You clicked it 3 times in a raw';
-            }
-            if (buttonClicked == 'c' && buttonBeforeLast == 'c' && buttClicked3 == 'c') {
+            } else if (buttonClicked == 'c' && buttonBeforeLast == 'c' && buttClicked3 == 'c') {
                 infoDiv.innerHTML += 'You clicked it 3 times in a raw';
             }
             if (buttonClicked3 == buttonClicked) {
@@ -49,6 +46,9 @@
             }
             buttonLastClicked = buttonClicked;
             console.log(buttonBeforeLast + buttonClicked + buttonClicked3)
+            if (buttonClicked == buttonBeforeLast) {
+                infoDiv += 'du trykket på samme knapp som for to ganger siden.';
+            }
         }
     </script>
 </body>
