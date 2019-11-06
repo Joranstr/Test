@@ -39,8 +39,8 @@
 
     <script type="text/javascript">
         let boardDiv = document.getElementById('board');
-        let playerX = [];
-        //let playerO = [];
+        const playerX = [];
+        //const playerO = [];
         let i
 
         //model
@@ -59,7 +59,8 @@
 
                 //console.log('showForEnd');
             }
-            boardDiv.innerHTML = html;
+            let winnerText = checkWinner() ? '<h2>Noen har vunnet</h2>' : '';
+            boardDiv.innerHTML = html + winnerText;
         }
         //controller
         function setX(index) {
@@ -67,12 +68,13 @@
                 console.log('if setting')
                 board[index] = 'x';
                 playerX.push(index);
-                checkWinner();
-                
-                setO();
+                let hasWon = checkWinner();
+                if (!hasWon) {
+                    setO();
+                }
                 show();
             }
-            
+
         }
         function setO() {
             console.log('setO')
@@ -87,16 +89,27 @@
             show();
         }
         function checkWinner() {
-            let winner = [[0, 1, 2],[3, 4, 5],[6, 7, 8]
-            ,[0, 3, 6],[1, 4, 7],[2, 5, 8],
-                [0, 4, 8], [2, 4, 6]];
-
-            if (playerX == winner) {
-                alert('test');
-            }
-
-            
+            const winnerCombinations = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]];
+            //for (let i = 0; i < winnerCombinations.length; i++) {
+            //    let winnerCombination = winnerCombinations[i];
+            //}
+            //for (let winnerCombination of winnerCombinations) {
+            //    if (isCombinationWinning(winnerCombination)) return true;
+            //}
+            //return false;
+            return winnerCombinations.some(isCombinationWinning);
+            //console.log(winner[0]);
+            //if (winner[0].includes(1 && 2 && 0)) {
+            //    alert('test');
+            //}
         }
+
+        function isCombinationWinning(combination) {
+            return board[combination[0]] == board[combination[1]]
+                && board[combination[2]] == board[combination[1]]
+                && (board[combination[0]] == 'x' || board[combination[0]] == 'o');
+        }
+
     </script>
 </body>
 </html>
